@@ -1,0 +1,32 @@
+.sidebarArea {
+  flex-shrink: 0;
+  width: $sidebarWidth;
+  background-color: white;
+  .nav-link {
+    color: rgb(32,33,36);
+  }
+  .sidenav-bg:hover {
+    background-color: #f5f5f5;
+    border-radius:  0 24px 24px 0;
+  }
+  .sidenav-bg .active {
+    background-color: rgb(232,240,254);
+    border-radius: 0 24px 24px 0;
+    color: rgb(25,103,210);
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .sidebarArea {
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    z-index: 1;
+    margin-left: -$sidebarWidth;
+    transition: 0.2s ease-in;
+    &.showSidebar {
+      margin-left: 0px;
+    }
+  }
+}
